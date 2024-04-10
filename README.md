@@ -1,8 +1,29 @@
-# React + Vite
+# 🍕 PizzaPalette
+<a href="https://github.com/saraferreira10/pizza-palette-back">Acesse o Back End do projeto aqui :)</a>
+<br/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔧 Instalação
 
-Currently, two official plugins are available:
+Clone o repositório:
+```
+git clone https://github.com/saraferreira10/pizza-palette-react-query
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Acesse o diretório principal:
+```
+ cd pizza-palette-react-query
+```
+
+Faça a instalação:
+```
+npm install
+```
+
+Inicie o projeto:
+```
+npm run dev
+```
+
+<br/>
+
+Made with ❤️ by [Sara Ferreira]([https://gist.github.com/saraferreira10](https://github.com/saraferreira10)) 😊
