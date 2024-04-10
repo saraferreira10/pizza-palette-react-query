@@ -5,6 +5,8 @@ import { useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { TiDelete } from "react-icons/ti";
 import { MdEdit } from "react-icons/md";
+import { toast, Bounce } from "react-toastify";
+import { queryClient } from "../queryClient";
 
 async function deletePizza(id) {
     const response = await axios.delete(`http://localhost:8080/pizzas/${id}`);
@@ -18,7 +20,23 @@ export default function PizzaItem({ pizza }) {
     const { isPending, isError, error, mutate } = useMutation({
         mutationFn: deletePizza,
         onSuccess: () => {
-            window.location.reload();
+            async function refresh() {
+                await queryClient.refetchQueries({ queryKey: ["get-all-pizzas"], type: 'active' })
+                toast.success('Pizza excluída!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: 0,
+                    theme: "light",
+                    transition: Bounce,
+                })
+
+            }
+
+            refresh();
         }
     })
 
